@@ -1,17 +1,17 @@
-int ledPin = 13;  // LED connected to digital pin 13
-int leakPin = 2;    // pushbutton connected to digital pin 7
-int leak = 0;      // variable to store the read value
+int ledPin = 13;  // LED
+int leakPin = 2;    // Leak Signal Pin
+int leak = 0;      // 0 = Dry , 1 = Leak
 
 void setup() {
-  pinMode(ledPin, OUTPUT);  // sets the digital pin 13 as output
-  pinMode(leakPin, INPUT);    // sets the digital pin 7 as input
+  pinMode(ledPin, OUTPUT);
+  pinMode(leakPin, INPUT);
   Serial.begin(115200);
   Serial.println("Blue Robotics SOS Leak Sensor Example");
 }
 
 void loop() {
-  leak = digitalRead(leakPin);   // read the input pin
-  digitalWrite(ledPin, leak);  // sets the LED to the button's value
+  leak = digitalRead(leakPin);   // Read the Leak Sensor Pin
+  digitalWrite(ledPin, leak);  // Sets the LED to the Leak Sensor's Value
 
   if (leak == 1) {
     Serial.println("Leak Detected!");
