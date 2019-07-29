@@ -5,7 +5,7 @@ int leak = 0;      // 0 = Dry , 1 = Leak
 void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(leakPin, INPUT);
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Blue Robotics SOS Leak Sensor Example");
 }
 
